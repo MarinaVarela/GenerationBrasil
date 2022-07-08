@@ -6,28 +6,41 @@ public class atvjava1_0707 {
 
 	public static void main(String[] args) {
 		
-		int num;
-		double valor;
-		
+		int a, b, c;
+				
 		Scanner leia = new Scanner(System.in);
 		
-		System.out.println("\nDigite com um número: ");
-		num = leia.nextInt();
+		System.out.println("\nDigite o valor de A: ");
+		a = leia.nextInt();
+		System.out.println("\nDigite o valor de B: ");
+		b = leia.nextInt();
+		System.out.println("\nDigite o valor de C: ");
+		c = leia.nextInt();
 		
-		if(num % 2 == 0)
+		if(a<=b && b<=c)
 		{
-			valor = Math.sqrt(num);
-			System.out.printf("\nO número é par e sua raiz quadrada é de %.1f",valor);
-
+			System.out.println("\nA ordem crescente é "+a+" , "+b+" , "+c);//a , b , c
+		}
+		else if(a<=c && c<=b)
+		{
+			System.out.println("\nA ordem crescente é "+a+" , "+c+" , "+b);
+		}
+		else if(b<=a && a<=c)
+		{
+			System.out.println("\nA ordem crescente é "+b+" , "+a+" , "+c);
+		}
+		else if(b<=c && c<=a)
+		{
+			System.out.println("\nA ordem crescente é "+b+" , "+c+" , "+a);
+		}
+		else if(c<=a && a<=b)
+		{
+			System.out.println("\nA ordem crescente é "+c+" , "+a+" , "+b);
 		}
 		else
 		{
-			valor = Math.pow(num, 2);
-			System.out.println("\nO número é ímpar e sua potência é de "+valor);
-
+			System.out.println("\nA ordem crescente é "+c+" , "+b+" , "+a);
 		}
-		
 
 	}
-
 }
