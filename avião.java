@@ -8,9 +8,9 @@ public class avião {
 	
 	public avião (String m, String cp, String ton)
 	{
-		modelo = m;
-		peso = ton;
-		capacidadePassageiros = cp;
+		this.modelo = m;
+		this.peso = ton;
+		this.capacidadePassageiros = cp;
 	}
 	
 	public String getAviao()

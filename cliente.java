@@ -7,8 +7,8 @@ public class cliente {
 	
 	public cliente (String name, String id)
 	{
-		nome = name;
-		idade = id;
+		this.nome = name;
+		this.idade = id;
 	}
 	
 	public String getCliente()
