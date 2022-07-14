@@ -8,12 +8,6 @@ public class ObjAnimal {
 		Preguiça preguiça = new Preguiça("Matilda", 3, "aaa", "subindo");
 		
 		
-		System.out.print(cavalo);
-		System.out.print("\n"+cachorro);
-		System.out.print("\n"+preguiça);
-		
-		
-		
 	}
 
 }
