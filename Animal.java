@@ -1,22 +1,14 @@
 package POO;
 
-public class Animal {
+public abstract class Animal {
 
 	private String nome;
 	private int idade;
 	
-	public String som()
-	{
-		return "Emite som.";
-	}
-	
-	
-	public Animal(String nome, int idade) 
-	{
-		this.nome = nome;
-		this.idade = idade;
-	}
+	abstract public void Som (String som);
 
+	public Animal(String nome, int idade, String som) {
+	}
 
 	public String getNome() {
 		return nome;
@@ -35,8 +27,6 @@ public class Animal {
 
 	public void setIdade(int idade) {
 		this.idade = idade;
-	}
-
-	
+	}	
 	
 }
