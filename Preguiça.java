@@ -6,6 +6,8 @@ public class Preguiça extends Animal {
 	public Preguiça(String nome, int idade, String som, String subir)	{
 			super (nome, idade, som);
 			this.subir = subir;
+			System.out.println("O nome dela é " + nome + ", tem " + idade + " anos, " + " está " + subir+" na árvore e emitindo o som " + som);
+
 		}
 		
 	public String getSubir() {
