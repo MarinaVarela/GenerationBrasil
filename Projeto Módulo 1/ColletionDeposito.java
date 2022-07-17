@@ -1,14 +1,14 @@
 package modulo1;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class ColletionDeposito {
 
 	public static void main (String args[]) {
 		
-		ArrayList<String> armazem = new ArrayList<String>();
-		
+		HashMap<String, Integer> nomeParamarca = new HashMap<>();
+
 		int op;
 		Scanner ler = new Scanner(System.in);
 		
@@ -16,11 +16,14 @@ public class ColletionDeposito {
 			System.out.println("\nESCOLHA UMA OPÇÃO:");
 			System.out.println();
 			System.out.println("**************************************");
-			System.out.println("1 - Adicionar produto?");
-			System.out.println("2 - Remover produto?");
-			System.out.println("3 - Atualizar o produto?");
-			System.out.println("4 - Mostrar os produtos no Armazém?");
-			System.out.println("5 - Encerrar sistema.");
+			System.out.println("1 - Adicionar vinho no Armazém.");
+			System.out.println("2 - Adicionar cerveja no Armazém.");
+			System.out.println("3 - Adicionar água no Armazém.");
+			System.out.println("4 - Adicionar refrigerante no Armazém.");
+			System.out.println("5 - Remover um produto.");
+			System.out.println("6 - Atualizar a quantidade de um produto.");
+			System.out.println("7 - Mostrar os produtos no Armazém.");
+			System.out.println("0 - Encerrar sistema.");
 			System.out.println("**************************************");
 			
 			op = ler.nextInt();
@@ -28,45 +31,73 @@ public class ColletionDeposito {
 		switch(op) {
 		case 1:
 			ler.nextLine();
-			System.out.println("Qual o nome do produto que deseja adicionar ao estoque?");
-			String produto = ler.nextLine();
-			armazem.add(produto);
+			System.out.println("Qual o nome do vinho que deseja adicionar ao estoque?");
+			String nomeVinho = ler.nextLine();
+			System.out.println("Qual a quantidade do produto?");
+			Integer quantVinho = ler.nextInt();
+			nomeParamarca.put(nomeVinho, quantVinho);			
 		break;
 		
 		case 2:
 			ler.nextLine();
-			System.out.println("Qual produto deseja remover?");
-			String produtoRemover = ler.nextLine();
-			
-			if (armazem.contains(produtoRemover)) {
-				armazem.remove(produtoRemover);
-			}
-			else {
-				System.out.println("Erro! O produto não existe no Armazém.");
-			}
+			System.out.println("Qual o nome da cerveja que deseja adicionar ao estoque?");
+			String nomeCerveja = ler.nextLine();
+			System.out.println("Qual a quantidade do produto?");
+			Integer quantCerveja = ler.nextInt();
+			nomeParamarca.put(nomeCerveja, quantCerveja);	
 		break;
 		
 		case 3:
 			ler.nextLine();
-			System.out.println("Qual produto quer atualizar?");
-			String antigoProduto = ler.nextLine();
-			System.out.println("Qual produto sairá do Armazém e será substituído?");
-			String novoProduto = ler.nextLine();
-			
-			if(armazem.contains(antigoProduto)) {
-				armazem.remove(antigoProduto);
-				armazem.add(novoProduto);
+			System.out.println("Qual o nome da água que deseja adicionar ao estoque?");
+			String nomeAgua = ler.nextLine();
+			System.out.println("Qual a quantidade do produto?");
+			Integer quantAgua = ler.nextInt();
+			nomeParamarca.put(nomeAgua, quantAgua);			
+		break;
+		
+		case 4:
+			ler.nextLine();
+			System.out.println("Qual o nome da refrigerante que deseja adicionar ao estoque?");
+			String nomeRefri = ler.nextLine();
+			System.out.println("Qual a quantidade do produto?");
+			Integer quantRefri = ler.nextInt();
+			nomeParamarca.put(nomeRefri, quantRefri);
+		break;
+		
+		case 5:
+			ler.nextLine();
+			System.out.println("Qual o nome do produto deseja remover completamente?");
+			String produtoRemover = ler.nextLine();	
+			if (nomeParamarca.containsKey(produtoRemover)) {
+				nomeParamarca.remove(produtoRemover);
+			}
+			else {
+				System.out.println("Erro! O produto não existe no Armazém.");
+			}
+			break;
+
+		case 6:
+			ler.nextLine();
+			System.out.println("Qual o nome produto quer atualizar?");
+			String nomeProduto = ler.nextLine();		
+			System.out.println("Qual a nova quantidade deste produto?");
+			Integer quantNova = ler.nextInt();
+			if (nomeParamarca.containsKey(nomeProduto)) {
+				nomeParamarca.remove(nomeProduto);
+				nomeParamarca.get(quantNova);
+				nomeParamarca.put(nomeProduto, quantNova);
 			}
 			else {
 				System.out.println("Erro! O produto não existe no Armazém.");
 			}
 		break;
 		
-		case 4:
-			System.out.println("O Armazém contém os seguintes produtos:"+"\n"+armazem);
+		case 7:
+			System.out.println("Os produtos no Armazém são: "+nomeParamarca);
 		break;
 		
-		case 5:
+		case 0:
 			System.out.println("Sistema encerrado.");
 		break;
 		
@@ -74,7 +105,7 @@ public class ColletionDeposito {
 			System.out.println("Opção inválida. Digite uma opção válida ou encerre o sistema apertando 5");
 		}
 		}
-		while(op!=5);
+		while(op!=0);
 		
 		
 	
