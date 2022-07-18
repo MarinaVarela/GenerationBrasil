@@ -3,7 +3,7 @@ package modulo1;
 public class ExceçãoDeposito {
 
 	/*
-	A exceção foi criada para criar um padrão nos códigos das bebidas.
+	A exceção foi feita para criar um padrão nos códigos das bebidas.
 	Evitando, assim, erros e divergências.
 	
 	O padrão definido é: usar no cadastro todas as letras minúsculas.

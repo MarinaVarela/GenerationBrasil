@@ -4,6 +4,15 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class ColletionDeposito {
+	
+	/*
+	 A colletion foi desenvolvida para gerenciamento do Aramazém do Depósito.
+	 Foram incluídas as opções de adicionar, remover e atualizar os produtos, além de mostrar uma lista com os itens disponíveis e encerrar o sistema.
+	 
+	 Como queremos mostrar a quantidade de itens de cada produto, usamos a classe HashMap, que é a implementação da interface Map.
+	 Ao usar o conceito de key-value pairs, conseguimos colocar as informações de nome e quantidade dos produtos, uma ao lado da outra.
+	 
+	 */
 
 	public static void main (String args[]) {
 		
