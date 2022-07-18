@@ -33,36 +33,60 @@ public class ColletionDeposito {
 			ler.nextLine();
 			System.out.println("Qual o nome do vinho que deseja adicionar ao estoque?");
 			String nomeVinho = ler.nextLine();
-			System.out.println("Qual a quantidade do produto?");
-			Integer quantVinho = ler.nextInt();
-			nomeParamarca.put(nomeVinho, quantVinho);			
+			if (nomeParamarca.containsKey(nomeVinho)) {
+				System.out.println("Erro! O produto já existe no sistema do Armazém. "
+						+ "Selecione a opção 6 - Atualizar a quantidade de um produto.");
+			}
+			else {
+				System.out.println("Qual a quantidade do produto?");
+				Integer quantVinho = ler.nextInt();
+				nomeParamarca.put(nomeVinho, quantVinho);
+			}			
 		break;
 		
 		case 2:
 			ler.nextLine();
 			System.out.println("Qual o nome da cerveja que deseja adicionar ao estoque?");
 			String nomeCerveja = ler.nextLine();
-			System.out.println("Qual a quantidade do produto?");
-			Integer quantCerveja = ler.nextInt();
-			nomeParamarca.put(nomeCerveja, quantCerveja);	
+			if (nomeParamarca.containsKey(nomeCerveja)) {
+				System.out.println("Erro! O produto já existe no sistema do Armazém. "
+						+ "Selecione a opção 6 - Atualizar a quantidade de um produto.");
+			}
+			else {
+				System.out.println("Qual a quantidade do produto?");
+				Integer quantCerveja = ler.nextInt();
+				nomeParamarca.put(nomeCerveja, quantCerveja);
+			}
 		break;
 		
 		case 3:
 			ler.nextLine();
 			System.out.println("Qual o nome da água que deseja adicionar ao estoque?");
 			String nomeAgua = ler.nextLine();
-			System.out.println("Qual a quantidade do produto?");
-			Integer quantAgua = ler.nextInt();
-			nomeParamarca.put(nomeAgua, quantAgua);			
+			if (nomeParamarca.containsKey(nomeAgua)) {
+				System.out.println("Erro! O produto já existe no sistema do Armazém. "
+						+ "Selecione a opção 6 - Atualizar a quantidade de um produto.");
+			}
+			else {
+				System.out.println("Qual a quantidade do produto?");
+				Integer quantAgua = ler.nextInt();
+				nomeParamarca.put(nomeAgua, quantAgua);
+			}		
 		break;
 		
 		case 4:
 			ler.nextLine();
 			System.out.println("Qual o nome da refrigerante que deseja adicionar ao estoque?");
 			String nomeRefri = ler.nextLine();
-			System.out.println("Qual a quantidade do produto?");
-			Integer quantRefri = ler.nextInt();
-			nomeParamarca.put(nomeRefri, quantRefri);
+			if (nomeParamarca.containsKey(nomeRefri)) {
+				System.out.println("Erro! O produto já existe no sistema do Armazém. "
+						+ "Selecione a opção 6 - Atualizar a quantidade de um produto.");
+			}
+			else {
+				System.out.println("Qual a quantidade do produto?");
+				Integer quantRefri = ler.nextInt();
+				nomeParamarca.put(nomeRefri, quantRefri);
+			}
 		break;
 		
 		case 5:
@@ -75,22 +99,24 @@ public class ColletionDeposito {
 			else {
 				System.out.println("Erro! O produto não existe no Armazém.");
 			}
+			System.out.println("Os produtos no Armazém são: "+nomeParamarca);
 			break;
 
 		case 6:
 			ler.nextLine();
 			System.out.println("Qual o nome produto quer atualizar?");
-			String nomeProduto = ler.nextLine();		
-			System.out.println("Qual a nova quantidade deste produto?");
-			Integer quantNova = ler.nextInt();
+			String nomeProduto = ler.nextLine();
 			if (nomeParamarca.containsKey(nomeProduto)) {
-				nomeParamarca.remove(nomeProduto);
-				nomeParamarca.get(quantNova);
-				nomeParamarca.put(nomeProduto, quantNova);
+				System.out.println("Qual a nova quantidade deste produto?");
+				Integer quantNova = ler.nextInt();
+					nomeParamarca.remove(nomeProduto);
+					nomeParamarca.get(quantNova);
+					nomeParamarca.put(nomeProduto, quantNova);
 			}
 			else {
 				System.out.println("Erro! O produto não existe no Armazém.");
 			}
+			System.out.println("Os produtos no Armazém são: "+nomeParamarca);
 		break;
 		
 		case 7:
@@ -106,7 +132,6 @@ public class ColletionDeposito {
 		}
 		}
 		while(op!=0);
-		
 		
 	
 	}
