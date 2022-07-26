@@ -37,4 +37,4 @@ USE db_pizzaria_legal;
 SELECT * FROM tb_pizzas WHERE valor > 45;
 SELECT * FROM tb_pizzas WHERE valor > 50 AND valor < 100;
 SELECT * FROM tb_pizzas WHERE sabor LIKE '%m%';
-SELECT * FROM tb_categorias INNER JOIN tb_pizzas ON tb_categorias.id_categorias = tb_pizzas.categorias_id;
+SELECT * FROM tb_pizzas INNER JOIN tb_categorias ON tb_categorias.id_categorias = tb_pizzas.categorias_id;
